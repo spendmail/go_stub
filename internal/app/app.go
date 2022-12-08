@@ -2,6 +2,7 @@ package app
 
 import (
 	"errors"
+	"fmt"
 )
 
 type Logger interface {
@@ -32,6 +33,6 @@ func New(logger Logger, config Config) (*Application, error) {
 
 func (app *Application) StubMethod(intStubParam int, stringStubParam string, anyStubParam string, headers map[string][]string) ([]byte, error) {
 
-	resultBytes := []byte("This is a stub")
+	resultBytes := []byte(fmt.Sprintf("This is a stub: %s, %s!", stringStubParam, anyStubParam))
 	return resultBytes, nil
 }

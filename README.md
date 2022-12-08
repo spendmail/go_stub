@@ -1,14 +1,18 @@
 
 ---
-1. Coding:
-
+1. Service implementation:
  - fix all <stub> occurrences
- - go mod init github.com/spendmail/stub
- - go mod tidy
  - implement new features
 
 ---
-2. Linting & Testing:
+2. Module init:
+```
+go mod init github.com/spendmail/stub
+go mod tidy
+```
+
+---
+3. Linting & Testing:
 ```
 golangci-lint run .
 golangci-lint run ./...
@@ -18,35 +22,27 @@ go test -v -count=1 -timeout=30s -tags bench .
 ```
 
 ---
-3. Module Availability
+4. Checking module Availability
 ```
 cd /tmp/
 go get -v -d github.com/spendmail/stub@develop
 ```
 
 ---
-4. Build сервиса:
+5. Local run:
 ```
 make build
-```
-
----
-5. Запуск сервиса:
-```
 make launch
+wget http://localhost:8888/path/100/hello/stub
 ```
 
+
 ---
-6. Запуск сервиса (docker-compose):
+6. Run via docker-compose:
 ```
 cd /tmp
-git clone --branch develop git@github.com:spendmail/stub.git stub
+git clone --branch main git@github.com:spendmail/go_stub.git stub
 cd stub
 make run
+wget http://localhost:8888/path/100/hello/stub
 ```
-
----
-7. Проверка работы:
-```
-wget http://localhost:8888/path/1024/param1/param2.jpg
-
