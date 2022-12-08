@@ -20,7 +20,8 @@ func TestApplication(t *testing.T) {
 		app, err := New(logger, config)
 		require.NoError(t, err, "should be without errors")
 
-		err = app.Do()
+		bytes, err := app.StubMethod(100, "stringStubParam", "anyStubParam", map[string][]string{})
 		require.NoError(t, err, "should be without errors")
+		require.Equal(t, bytes, []byte{})
 	})
 }
