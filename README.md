@@ -33,7 +33,7 @@ go get -v -d github.com/spendmail/stub@develop
 ```
 make build
 make launch
-wget http://localhost:8888/path/100/hello/stub
+curl -X GET 'http://localhost:8888/path/100/hello/stub'
 ```
 
 
@@ -44,5 +44,5 @@ cd /tmp
 git clone --branch main git@github.com:spendmail/go_stub.git stub
 cd stub
 make run
-wget http://localhost:8888/path/100/hello/stub
+curl -X GET 'http://localhost:8888/path/100/hello/stub'
 ```
