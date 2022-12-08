@@ -25,7 +25,7 @@ go test -v -count=1 -timeout=30s -tags bench .
 4. Checking module Availability
 ```
 cd /tmp/
-go get -v -d github.com/spendmail/stub@develop
+go get -v -d github.com/spendmail/stub@main
 ```
 
 ---
