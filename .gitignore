@@ -1,0 +1,6 @@
+logs/
+bin/
+help/
+.idea/
+configs/stub.toml
+configs/stub.prod.toml
