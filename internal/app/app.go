@@ -32,7 +32,6 @@ func New(logger Logger, config Config) (*Application, error) {
 
 func (app *Application) StubMethod(intStubParam int, stringStubParam string, anyStubParam string, headers map[string][]string) ([]byte, error) {
 
-	var resultBytes []byte
-
+	resultBytes := []byte("This is a stub")
 	return resultBytes, nil
 }
